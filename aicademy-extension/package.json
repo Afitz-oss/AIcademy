@@ -1,0 +1,38 @@
+{
+  "name": "aicademy",
+  "displayName": "AIcademy Tutor",
+  "description": "Personalized adaptive coding curriculum — onboard, track progress, and generate problems without leaving your editor.",
+  "version": "0.1.0",
+  "publisher": "aicademy",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Education", "Other"],
+  "activationEvents": [
+    "workspaceContains:LEARNER_PROFILE.md"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aicademy.onboard",
+        "title": "AIcademy: Start Onboarding"
+      },
+      {
+        "command": "aicademy.whatsNext",
+        "title": "AIcademy: What's Next?"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "package": "npm run compile && vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.4.0"
+  }
+}

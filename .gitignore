@@ -19,3 +19,8 @@ build/
 dist/
 *.egg-info/
 .env
+
+# VS Code extension build artifacts
+aicademy-extension/node_modules/
+aicademy-extension/out/
+aicademy-extension/*.vsix

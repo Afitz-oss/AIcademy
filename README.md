@@ -23,9 +23,9 @@ All tracks start from the same foundation: **first-principles Python** (Stages 0
 
 ---
 
-## Before You Start — What is GitHub?
+## Before You Start — Key Concepts
 
-If you're new to coding, you may not know what GitHub is. Here's the short version:
+If you're new to coding, a few terms will come up in setup. Here's what they mean:
 
 **Git** is a program that tracks changes to your code — like "track changes" in Google Docs, but for code. It lives on your computer.
 
@@ -36,6 +36,8 @@ If you're new to coding, you may not know what GitHub is. Here's the short versi
 **Forking** means making your own copy of someone else's repo on GitHub. Think of it as photocopying a workbook — the original stays clean, and you write in your copy.
 
 **Cloning** means downloading your forked copy from GitHub to your computer so you can open it in Cursor.
+
+**Node.js** is a program that lets JavaScript run on your computer (outside a browser). You don't need to know JavaScript — Node.js is just the engine that builds the AIcademy extension. Think of it like Python, but for a different language. It comes with **npm** (Node Package Manager), which installs the extension's build tools the same way `pip install` installs Python packages.
 
 > For a deeper explanation of all these tools, see `09_roadmaps/tools_and_setup.md`.
 
@@ -76,45 +78,76 @@ pip install -r requirements.txt
 
 Download from [cursor.com](https://cursor.com) (free). Open Cursor and use **File → Open Folder** to open your AIcademy folder.
 
-### Step 7 — Set up your API key (optional for now)
+### Step 7 — Install the AIcademy Extension (One-Time, ~2 minutes)
 
-AIcademy uses AI models to generate problems and grade your work. To use this directly from scripts, you need an API key from OpenAI or Anthropic.
+The AIcademy extension lives inside your repo and handles onboarding automatically — no manual profile editing required.
 
-**You can skip this step for now** — Cursor's built-in AI works for all the tutoring. Come back to this when you reach Stage 6.
+Open a terminal (`Cmd+Space` → type "Terminal" → hit Enter) and run:
 
-When you're ready:
+```bash
+cd ~/AIcademy/aicademy-extension
+sed -i '' 's/\r//' setup.sh   # fix line endings (run once)
+zsh setup.sh                   # installs Node.js if needed, builds and packages the extension
+```
+
+**What is that `sed` command?** It's a one-line fix for how the file was saved. It removes invisible characters that would confuse the script. You only run it once, ever. After that, just `zsh setup.sh` is enough.
+
+**What does `setup.sh` do?**
+1. Checks if Node.js (npm) is installed — installs it via Homebrew if not
+2. Installs the extension's build tools (like `pip install` but for Node.js)
+3. Builds and packages the extension into a single `aicademy-0.1.0.vsix` file
+
+**Then install it in Cursor:**
+1. Press `Cmd+Shift+P`
+2. Type: `Extensions: Install from VSIX`
+3. Select `aicademy-extension/aicademy-0.1.0.vsix`
+4. Restart Cursor when prompted
+
+After restarting, you'll see a `🎓 AIcademy` button in the bottom status bar. You're ready.
+
+### Step 8 — Complete Onboarding
+
+When you reopen the AIcademy folder after installing the extension, a prompt will appear automatically:
+
+> **"Welcome to AIcademy! Your learner profile is empty. Ready to set up your personalized curriculum?"**
+
+Click **Start Onboarding**. The extension will walk you through 13 short questions using dropdown menus and text boxes — no file editing. At the end, your AI tutor generates your personalized learning path, competency map, and intake notes automatically.
+
+You can also trigger onboarding anytime with `Cmd+Shift+P` → `AIcademy: Start Onboarding`.
+
+### Step 9 — Set up your API key (optional for now)
+
+AIcademy uses Cursor's built-in AI for all tutoring — **you don't need an API key to get started.**
+
+Come back to this at Stage 6 when you start building your own AI scripts:
 1. Get a key at [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-2. Copy the file `.env.example` and rename the copy to `.env`
-3. Open `.env` and replace `your-key-here` with your actual key
+2. Copy `.env.example` → rename to `.env` → replace `your-key-here` with your key
 
-> **Important:** Never share your `.env` file or paste your API key into the chat. It's a private password. The `.gitignore` file already ensures it never gets uploaded to GitHub.
+> **Important:** Never share your `.env` file or paste your key into chat. It's already in `.gitignore` so it won't be uploaded to GitHub.
 
-### Step 8 — Fill out your learner profile
+### Step 10 — Start learning
 
-Open `LEARNER_PROFILE.md` in Cursor and fill out every section. It takes about 5 minutes. Be honest — there are no wrong answers.
+Open the Cursor chat panel (`Cmd+L`) and say:
 
-### Step 9 — Start learning
+> **"What's my first problem?"**
 
-Open the Cursor chat panel (`Cmd+L` on Mac, `Ctrl+L` on Windows) and say:
-
-> **"I just filled out my profile, let's get started."**
-
-The AI will read your profile and generate your personalized learning path, competency map, and first problem.
+Your tutor has already read your profile and curriculum. It's ready to go.
 
 ---
 
 ## How It Works Every Day
 
 ```
-Open Cursor
-    → Open chat
-    → AI reads your profile + competency map
+Open Cursor (AIcademy folder)
+    → Click 🎓 AIcademy in the status bar — or just open the chat
+    → AI reads your profile + competency map automatically
     → AI suggests what to work on today
     → AI generates a problem tailored to your level + goal track
-    → You solve it in solution.py
-    → Ask the AI to grade it
-    → AI asks you questions (Socratic method) instead of just giving answers
-    → AI updates your competency map + error log
+    → Problem is delivered in chat AND written to 04_practice_log/ as solution.py
+    → You write your solution below the comment block and run it
+    → Say "done" in chat — AI grades it using the Socratic method
+    → AI asks you questions before revealing what's wrong
+    → AI updates your competency map + error log silently
     → Commit your work: git add . && git commit -m "solved today's problem" && git push
 ```
 
@@ -125,10 +158,16 @@ Open Cursor
 ```
 AIcademy/
 │
-├── LEARNER_PROFILE.md            ★ Fill this out first
+├── LEARNER_PROFILE.md            ★ Auto-filled by the extension during onboarding
 ├── AGENTS.md                     AI tutor rules (do not edit)
-├── .env.example                  Copy → rename to .env → add your API key
-├── requirements.txt
+├── .env.example                  Copy → rename to .env → add your API key (Stage 6+)
+├── requirements.txt              Python dependencies (pip install -r requirements.txt)
+│
+├── aicademy-extension/           ★ VS Code/Cursor extension — handles onboarding
+│   ├── setup.sh                  Run once to build and package the extension
+│   ├── package.json              Extension manifest + Node.js dependencies
+│   ├── src/                      Extension source code (TypeScript)
+│   └── aicademy-0.1.0.vsix      Packaged extension (generated by setup.sh)
 │
 ├── 00_knowledgebase/             Reference material (read-only)
 │   ├── python_basics.ipynb       Stage 0–3 concepts with examples
@@ -155,7 +194,7 @@ AIcademy/
 │   ├── explain_concept.md        Deep explanation of a topic
 │   └── mock_interview.md         Full timed mock interview
 │
-├── 04_practice_log/              ★ AI writes your problems here (dated)
+├── 04_practice_log/              ★ AI writes your problems here (dated folders)
 │
 ├── 05_solutions/                 Canonical reference solutions (read-only)
 │
