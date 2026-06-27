@@ -1,0 +1,973 @@
+{
+    "cells": [
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "# Akim Programming Knowledge Base Study Guide\n",
+       "\n",
+       "This study guide covers essential **Pandas methods for data analysis** as well as **Python fundamentals** for data analysis and general programming. For each method or concept, an explanation is provided along with example code and potential outputs.\n",
+       "\n",
+       "Feel free to run the cells in this notebook to see the outputs and to experiment further with the code."
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "## 1. Pandas Methods for Data Analysis\n",
+       "\n",
+       "In this section, we cover how to load, explore, manipulate, and visualize data using Pandas."
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Data Loading & Exporting\n",
+       "\n",
+       "Pandas provides several functions to read data from various sources and export data to different formats. Below are examples for some of the most common methods."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import pandas as pd\n",
+       "from io import StringIO\n",
+       "\n",
+       "# --- Data Loading ---\n",
+       "\n",
+       "# Example for pd.read_csv()\n",
+       "csv_data = \"\"\"col1,col2\n",
+       "1,2\n",
+       "3,4\n",
+       "\"\"\"\n",
+       "df_csv = pd.read_csv(StringIO(csv_data))\n",
+       "print('pd.read_csv() output:')\n",
+       "print(df_csv)\n",
+       "\n",
+       "# Example for pd.read_excel() (requires an actual Excel file)\n",
+       "# df_excel = pd.read_excel('data.xlsx')\n",
+       "\n",
+       "# Example for pd.read_parquet() (requires a parquet file)\n",
+       "# df_parquet = pd.read_parquet('data.parquet')\n",
+       "\n",
+       "# Example for pd.read_sql() (requires a SQL connection and query)\n",
+       "# df_sql = pd.read_sql('SELECT * FROM table', connection)\n",
+       "\n",
+       "# --- Data Exporting ---\n",
+       "# Exporting the DataFrame to different formats (uncomment when needed):\n",
+       "# df_csv.to_csv('output.csv', index=False)\n",
+       "# df_csv.to_excel('output.xlsx', index=False)\n",
+       "# df_csv.to_parquet('output.parquet')\n",
+       "# df_csv.to_sql('table_name', connection, if_exists='replace')"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Data Exploration\n",
+       "\n",
+       "Once data is loaded into a DataFrame, you can use various methods to get an overview of the data."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create a sample DataFrame for exploration\n",
+       "data = {\n",
+       "    'A': [1, 2, 3, 4, 5],\n",
+       "    'B': ['a', 'b', 'c', 'd', 'e'],\n",
+       "    'C': [10, 20, 30, 40, 50]\n",
+       "}\n",
+       "df = pd.DataFrame(data)\n",
+       "\n",
+       "print('df.head():')\n",
+       "print(df.head())\n",
+       "\n",
+       "print('\\ndf.tail():')\n",
+       "print(df.tail())\n",
+       "\n",
+       "print('\\ndf.info():')\n",
+       "df.info()\n",
+       "\n",
+       "print('\\ndf.describe():')\n",
+       "print(df.describe())\n",
+       "\n",
+       "print('\\ndf.shape:', df.shape)\n",
+       "print('df.columns:', df.columns.tolist())\n",
+       "print('df.index:', df.index.tolist())\n",
+       "print('df.dtypes:')\n",
+       "print(df.dtypes)\n",
+       "print('df.nunique():')\n",
+       "print(df.nunique())\n",
+       "print('df.memory_usage():')\n",
+       "print(df.memory_usage())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Selection & Filtering\n",
+       "\n",
+       "Select specific rows and columns, and filter the DataFrame based on conditions."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Selecting a single column\n",
+       "print('Single column (df[\"A\"]):')\n",
+       "print(df['A'])\n",
+       "\n",
+       "# Selecting multiple columns\n",
+       "print('\\nMultiple columns (df[[\"A\", \"B\"]]):')\n",
+       "print(df[['A', 'B']])\n",
+       "\n",
+       "# Using loc for label-based indexing (row label, column label)\n",
+       "print('\\ndf.loc[0, \"A\"]:')\n",
+       "print(df.loc[0, 'A'])\n",
+       "\n",
+       "# Using iloc for integer-based indexing (row index, column index)\n",
+       "print('\\ndf.iloc[0, 0]:')\n",
+       "print(df.iloc[0, 0])\n",
+       "\n",
+       "# Filtering rows where column A > 2\n",
+       "print('\\nFiltering df[df[\"A\"] > 2]:')\n",
+       "print(df[df['A'] > 2])\n",
+       "\n",
+       "# Using the query method\n",
+       "print('\\nUsing query: df.query(\"A > 2\")')\n",
+       "print(df.query('A > 2'))\n",
+       "\n",
+       "# Filtering rows with a string pattern in column B\n",
+       "print('\\nFiltering rows where column B contains \"a\":')\n",
+       "print(df[df['B'].str.contains('a')])\n",
+       "\n",
+       "# Filtering rows using isin\n",
+       "print('\\nFiltering rows where A is in [2, 4]:')\n",
+       "print(df[df['A'].isin([2, 4])])"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Sorting & Ranking\n",
+       "\n",
+       "Sort the DataFrame by values or index and rank values within a column."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Sorting by column 'A' in descending order\n",
+       "print('Sorted by A (descending):')\n",
+       "print(df.sort_values(by='A', ascending=False))\n",
+       "\n",
+       "# Sorting by index\n",
+       "print('\\nSorted by index:')\n",
+       "print(df.sort_index())\n",
+       "\n",
+       "# Ranking the values in column 'A'\n",
+       "print('\\nRanking of column A:')\n",
+       "print(df['A'].rank())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Aggregation & Grouping\n",
+       "\n",
+       "Aggregate data by grouping rows using the `groupby` method and compute statistics."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create a sample DataFrame with a grouping column\n",
+       "data_group = {\n",
+       "    'Group': ['X', 'Y', 'X', 'Y', 'X'],\n",
+       "    'Value1': [10, 20, 30, 40, 50],\n",
+       "    'Value2': [5, 4, 3, 2, 1]\n",
+       "}\n",
+       "df_group = pd.DataFrame(data_group)\n",
+       "\n",
+       "# Group by 'Group' and aggregate\n",
+       "print('Groupby with aggregation:')\n",
+       "print(df_group.groupby('Group').agg({'Value1': 'sum', 'Value2': 'mean'}))\n",
+       "\n",
+       "# Pivot table example\n",
+       "print('\\nPivot table (sum of Value1):')\n",
+       "print(pd.pivot_table(df_group, index='Group', values='Value1', aggfunc='sum'))\n",
+       "\n",
+       "# Groupby mean, size, count, and sum\n",
+       "print('\\nGroupby mean:')\n",
+       "print(df_group.groupby('Group').mean())\n",
+       "\n",
+       "print('\\nGroupby size:')\n",
+       "print(df_group.groupby('Group').size())\n",
+       "\n",
+       "print('\\nGroupby count:')\n",
+       "print(df_group.groupby('Group').count())\n",
+       "\n",
+       "print('\\nGroupby sum:')\n",
+       "print(df_group.groupby('Group').sum())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Missing Values Handling\n",
+       "\n",
+       "Identify and handle missing values using methods such as `isna()`, `dropna()`, `fillna()`, and interpolation."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create a DataFrame with missing values\n",
+       "data_missing = {\n",
+       "    'A': [1, None, 3, 4],\n",
+       "    'B': [None, 'b', 'c', 'd']\n",
+       "}\n",
+       "df_missing = pd.DataFrame(data_missing)\n",
+       "\n",
+       "print('Missing values count:')\n",
+       "print(df_missing.isna().sum())\n",
+       "\n",
+       "print('\\nDataFrame after dropna:')\n",
+       "print(df_missing.dropna())\n",
+       "\n",
+       "print('\\nDataFrame after fillna with 0:')\n",
+       "print(df_missing.fillna(0))\n",
+       "\n",
+       "# Interpolation example (for numeric columns)\n",
+       "df_interp = pd.DataFrame({'A': [1, None, 3, 4]})\n",
+       "print('\\nDataFrame after interpolation:')\n",
+       "print(df_interp.interpolate())\n",
+       "\n",
+       "# Forward fill and backward fill\n",
+       "print('\\nForward fill:')\n",
+       "print(df_missing.ffill())\n",
+       "\n",
+       "print('\\nBackward fill:')\n",
+       "print(df_missing.bfill())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Data Transformation\n",
+       "\n",
+       "Apply functions and perform transformations on your data."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Applying a function to a column (squaring the values in column 'A')\n",
+       "print('Square values in column A using apply:')\n",
+       "print(df['A'].apply(lambda x: x**2))\n",
+       "\n",
+       "# Applying a function across rows\n",
+       "print('\\nApply function across rows (squaring A):')\n",
+       "print(df.apply(lambda row: row['A']**2 if pd.notnull(row['A']) else None, axis=1))\n",
+       "\n",
+       "# Adding a new column using assign\n",
+       "df_trans = df.assign(DoubleA = df['A'] * 2)\n",
+       "print('\\nDataFrame after assign (new column DoubleA):')\n",
+       "print(df_trans)\n",
+       "\n",
+       "# Replacing values in a column\n",
+       "df_replace = df.copy()\n",
+       "df_replace['B'] = df_replace['B'].replace({'a': 'alpha'})\n",
+       "print('\\nDataFrame after replace (changing \"a\" to \"alpha\")')\n",
+       "print(df_replace)\n",
+       "\n",
+       "# Changing data type: fill missing values then cast column 'A' to int\n",
+       "df_cast = df.fillna(0)\n",
+       "df_cast['A'] = df_cast['A'].astype(int)\n",
+       "print('\\nDataFrame after casting column A to int:')\n",
+       "print(df_cast)\n",
+       "\n",
+       "# Using map on a string column to convert text to uppercase\n",
+       "print('\\nMapping values to uppercase in column B:')\n",
+       "print(df['B'].map(lambda x: x.upper() if isinstance(x, str) else x))\n",
+       "\n",
+       "# Using applymap on the entire DataFrame to double numeric values (if applicable)\n",
+       "df_numeric = df.fillna(0)\n",
+       "print('\\nApplymap to double numeric values:')\n",
+       "print(df_numeric.applymap(lambda x: x*2 if isinstance(x, (int, float)) else x))"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Merging & Concatenation\n",
+       "\n",
+       "Combine multiple DataFrames using functions such as `concat`, `merge`, and `join`."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create two sample DataFrames for merging\n",
+       "df1 = pd.DataFrame({'key': [1, 2, 3], 'A': ['A1', 'A2', 'A3']})\n",
+       "df2 = pd.DataFrame({'key': [2, 3, 4], 'B': ['B2', 'B3', 'B4']})\n",
+       "\n",
+       "# Concatenation along rows (axis=0)\n",
+       "print('Concatenated DataFrames (axis=0):')\n",
+       "print(pd.concat([df1, df2], axis=0))\n",
+       "\n",
+       "# Merging DataFrames on 'key' with an inner join\n",
+       "print('\\nMerged DataFrames (inner join on key):')\n",
+       "print(pd.merge(df1, df2, on='key', how='inner'))\n",
+       "\n",
+       "# Joining DataFrames after setting 'key' as the index\n",
+       "df1_indexed = df1.set_index('key')\n",
+       "df2_indexed = df2.set_index('key')\n",
+       "print('\\nJoined DataFrames (left join):')\n",
+       "print(df1_indexed.join(df2_indexed, how='left'))"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### String Methods\n",
+       "\n",
+       "Use Pandas’ built-in string methods to manipulate text data stored in Series."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create a sample DataFrame with string data\n",
+       "df_str = pd.DataFrame({'col': ['  Hello ', 'World', 'test']})\n",
+       "\n",
+       "print('Lowercase:')\n",
+       "print(df_str['col'].str.lower())\n",
+       "\n",
+       "print('\\nUppercase:')\n",
+       "print(df_str['col'].str.upper())\n",
+       "\n",
+       "print('\\nStripped (whitespace removed):')\n",
+       "print(df_str['col'].str.strip())\n",
+       "\n",
+       "print('\\nReplace (Hello -> Hi):')\n",
+       "print(df_str['col'].str.replace('Hello', 'Hi'))\n",
+       "\n",
+       "print('\\nContains \"o\":')\n",
+       "print(df_str['col'].str.contains('o'))\n",
+       "\n",
+       "print('\\nSplit by whitespace:')\n",
+       "print(df_str['col'].str.split())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Datetime Handling\n",
+       "\n",
+       "Convert string dates to datetime objects and extract components (year, month, day, etc.)."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import datetime\n",
+       "\n",
+       "# Create a sample DataFrame with date strings\n",
+       "df_date = pd.DataFrame({'date_column': ['2025-01-01', '2025-02-15', '2025-03-10']})\n",
+       "\n",
+       "# Convert the date_column to datetime objects\n",
+       "df_date['date_column'] = pd.to_datetime(df_date['date_column'])\n",
+       "print('Datetime conversion:')\n",
+       "print(df_date)\n",
+       "\n",
+       "print('\\nYear:')\n",
+       "print(df_date['date_column'].dt.year)\n",
+       "\n",
+       "print('\\nMonth:')\n",
+       "print(df_date['date_column'].dt.month)\n",
+       "\n",
+       "print('\\nDay:')\n",
+       "print(df_date['date_column'].dt.day)\n",
+       "\n",
+       "print('\\nWeekday (0=Monday):')\n",
+       "print(df_date['date_column'].dt.weekday)\n",
+       "\n",
+       "print('\\nFormatted date (YYYY-MM-DD):')\n",
+       "print(df_date['date_column'].dt.strftime('%Y-%m-%d'))"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Rolling & Expanding Window Functions\n",
+       "\n",
+       "Perform calculations over rolling or expanding windows (e.g., moving averages, sums, or exponentially weighted means)."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create a sample numeric DataFrame\n",
+       "df_numeric = pd.DataFrame({'values': [1, 2, 3, 4, 5, 6]})\n",
+       "\n",
+       "print('Rolling mean with window=3:')\n",
+       "print(df_numeric.rolling(window=3).mean())\n",
+       "\n",
+       "print('\\nExpanding sum:')\n",
+       "print(df_numeric.expanding().sum())\n",
+       "\n",
+       "print('\\nExponentially weighted mean (span=3):')\n",
+       "print(df_numeric.ewm(span=3).mean())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Multi-Index Operations\n",
+       "\n",
+       "Manage DataFrames with multiple indices (hierarchical indexing) with methods like `set_index`, `reset_index`, `swaplevel`, `stack`, and `unstack`."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Create a sample DataFrame\n",
+       "df_multi = pd.DataFrame({\n",
+       "    'State': ['CA', 'CA', 'NY', 'NY'],\n",
+       "    'Year': [2020, 2021, 2020, 2021],\n",
+       "    'Value': [100, 150, 200, 250]\n",
+       "})\n",
+       "\n",
+       "print('Setting multi-index with State and Year:')\n",
+       "df_multi = df_multi.set_index(['State', 'Year'])\n",
+       "print(df_multi)\n",
+       "\n",
+       "print('\\nReset index:')\n",
+       "print(df_multi.reset_index())\n",
+       "\n",
+       "print('\\nSwap index levels:')\n",
+       "print(df_multi.swaplevel())\n",
+       "\n",
+       "print('\\nStack (demonstration with a simple DataFrame):')\n",
+       "df_stack = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})\n",
+       "stacked = df_stack.stack()\n",
+       "print(stacked)\n",
+       "\n",
+       "print('\\nUnstack:')\n",
+       "print(stacked.unstack())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Plotting\n",
+       "\n",
+       "Visualize data quickly using Pandas’ built-in plotting capabilities (requires Matplotlib)."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import matplotlib.pyplot as plt\n",
+       "%matplotlib inline\n",
+       "\n",
+       "# Create a sample DataFrame for plotting\n",
+       "df_plot = pd.DataFrame({\n",
+       "    'x': range(10),\n",
+       "    'y': [i**2 for i in range(10)]\n",
+       "})\n",
+       "\n",
+       "print('Line plot:')\n",
+       "df_plot.plot(x='x', y='y', kind='line')\n",
+       "plt.show()\n",
+       "\n",
+       "print('Bar plot:')\n",
+       "df_plot.plot(x='x', y='y', kind='bar')\n",
+       "plt.show()\n",
+       "\n",
+       "print('Histogram:')\n",
+       "df_plot['y'].plot(kind='hist')\n",
+       "plt.show()\n",
+       "\n",
+       "print('Box plot:')\n",
+       "df_plot.plot(kind='box')\n",
+       "plt.show()\n",
+       "\n",
+       "print('Scatter plot:')\n",
+       "df_plot.plot.scatter(x='x', y='y')\n",
+       "plt.show()"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "## 2. Python Essentials for Data Analysis & General Programming\n",
+       "\n",
+       "This section covers core Python concepts and functions that are essential for programming and data analysis."
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Basic Data Structures\n",
+       "\n",
+       "Lists, sets, and dictionaries are fundamental data structures in Python. The following examples illustrate various operations on these structures."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# --- List Operations ---\n",
+       "my_list = [10, 20, 30]\n",
+       "print('Original list:', my_list)\n",
+       "\n",
+       "my_list.append(40)\n",
+       "print('After append(40):', my_list)\n",
+       "\n",
+       "my_list.extend([50, 60])\n",
+       "print('After extend([50, 60]):', my_list)\n",
+       "\n",
+       "popped = my_list.pop()\n",
+       "print('After pop():', my_list, '| Popped element:', popped)\n",
+       "\n",
+       "my_list.remove(20)\n",
+       "print('After remove(20):', my_list)\n",
+       "\n",
+       "print('Index of 30:', my_list.index(30))\n",
+       "my_list.sort()\n",
+       "print('Sorted list:', my_list)\n",
+       "my_list.reverse()\n",
+       "print('Reversed list:', my_list)\n",
+       "print('Using sorted() (without modifying original):', sorted(my_list))\n",
+       "\n",
+       "# --- Set Operations ---\n",
+       "my_set = set([1, 2, 3])\n",
+       "print('\\nOriginal set:', my_set)\n",
+       "my_set.add(4)\n",
+       "print('After add(4):', my_set)\n",
+       "my_set.remove(2)\n",
+       "print('After remove(2):', my_set)\n",
+       "set_a = {1, 2, 3}\n",
+       "set_b = {3, 4, 5}\n",
+       "print('Union:', set_a.union(set_b))\n",
+       "print('Intersection:', set_a.intersection(set_b))\n",
+       "print('Difference (a - b):', set_a.difference(set_b))\n",
+       "\n",
+       "# --- Dictionary Operations ---\n",
+       "my_dict = {'key1': 'value1', 'key2': 'value2'}\n",
+       "print('\\nDictionary keys:', list(my_dict.keys()))\n",
+       "print('Dictionary values:', list(my_dict.values()))\n",
+       "print('Dictionary items:', list(my_dict.items()))\n",
+       "print('Get key1:', my_dict.get('key1', 'default'))\n",
+       "my_dict.update({'key3': 'value3'})\n",
+       "print('After update:', my_dict)\n",
+       "popped_value = my_dict.pop('key2')\n",
+       "print('After pop key2:', my_dict, '| Popped:', popped_value)\n",
+       "\n",
+       "# --- Using zip and enumerate ---\n",
+       "list1 = [1, 2, 3]\n",
+       "list2 = ['a', 'b', 'c']\n",
+       "print('\\nZipped:', list(zip(list1, list2)))\n",
+       "\n",
+       "for idx, value in enumerate(['apple', 'banana', 'cherry']):\n",
+       "    print(f'Index: {idx}, Value: {value}')"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### String Manipulation\n",
+       "\n",
+       "Perform various string operations using built-in string methods."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "my_str = '  Hello World  '\n",
+       "print('Lowercase:', my_str.lower())\n",
+       "print('Uppercase:', my_str.upper())\n",
+       "print('Stripped:', my_str.strip())\n",
+       "print('Replace (World -> Python):', my_str.replace('World', 'Python'))\n",
+       "print('Split:', my_str.split())\n",
+       "print('Join:', '-'.join(my_str.split()))\n",
+       "print('Find substring \"lo\":', my_str.find('lo'))\n",
+       "print('Starts with \"  He\":', my_str.startswith('  He'))\n",
+       "print('Ends with \"d  \":', my_str.endswith('d  '))\n",
+       "print('Length of string:', len(my_str))\n",
+       "\n",
+       "data_list = [10, 20, 30]\n",
+       "print('Length of list:', len(data_list))"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Control Flow\n",
+       "\n",
+       "Control the flow of your program using conditionals and loops."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# if/elif/else example\n",
+       "x = 10\n",
+       "if x > 10:\n",
+       "    print('x is greater than 10')\n",
+       "elif x == 10:\n",
+       "    print('x is equal to 10')\n",
+       "else:\n",
+       "    print('x is less than 10')\n",
+       "\n",
+       "# for loop using range\n",
+       "for i in range(3):\n",
+       "    print(f'Loop index: {i}')\n",
+       "\n",
+       "# while loop example\n",
+       "count = 0\n",
+       "while count < 3:\n",
+       "    print(f'Count: {count}')\n",
+       "    count += 1\n",
+       "\n",
+       "# Using break and continue\n",
+       "for i in range(5):\n",
+       "    if i == 2:\n",
+       "        continue  # Skip when i is 2\n",
+       "    if i == 4:\n",
+       "        break    # Exit loop when i is 4\n",
+       "    print(f'i: {i}')\n",
+       "\n",
+       "# try/except/finally block\n",
+       "try:\n",
+       "    result = 10 / 0\n",
+       "except ZeroDivisionError as e:\n",
+       "    print('Caught an exception:', e)\n",
+       "finally:\n",
+       "    print('Finally block executed')"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### List Comprehensions\n",
+       "\n",
+       "A concise syntax for creating lists."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "squares = [x**2 for x in range(10)]\n",
+       "print('List of squares:', squares)\n",
+       "\n",
+       "words = ['apple', 'kiwi', 'banana']\n",
+       "upper_words = [word.upper() for word in words if len(word) > 3]\n",
+       "print('Filtered and uppercased words:', upper_words)"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Lambda Functions\n",
+       "\n",
+       "Create small anonymous functions using the `lambda` keyword."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "double = lambda x: x * 2\n",
+       "print('Double of 5:', double(5))\n",
+       "\n",
+       "numbers = [1, 2, 3, 4]\n",
+       "squared = list(map(lambda x: x**2, numbers))\n",
+       "print('Squared numbers using map:', squared)\n",
+       "\n",
+       "positives = list(filter(lambda x: x > 2, numbers))\n",
+       "print('Filtered numbers greater than 2:', positives)"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Function Essentials\n",
+       "\n",
+       "Define functions using `def`, work with default parameters, variable arguments, and even recursion."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "def my_function(param1, param2='default'):\n",
+       "    print(f'param1: {param1}, param2: {param2}')\n",
+       "    return param1\n",
+       "\n",
+       "result = my_function('value1')\n",
+       "print('Function returned:', result)\n",
+       "\n",
+       "def recursive_factorial(n):\n",
+       "    if n <= 1:\n",
+       "        return 1\n",
+       "    else:\n",
+       "        return n * recursive_factorial(n-1)\n",
+       "\n",
+       "print('Factorial of 5:', recursive_factorial(5))"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### File Handling\n",
+       "\n",
+       "Open, read, and write files using Python’s built-in file handling functions."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "# Writing to a file\n",
+       "with open('example.txt', 'w') as f:\n",
+       "    f.write('Hello, file handling!')\n",
+       "\n",
+       "# Reading from the file\n",
+       "with open('example.txt', 'r') as f:\n",
+       "    content = f.read()\n",
+       "    print('File content:', content)"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Error Handling\n",
+       "\n",
+       "Use try/except/finally blocks to gracefully handle errors and raise exceptions when needed."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "try:\n",
+       "    int('abc')  # This will raise a ValueError\n",
+       "except ValueError as e:\n",
+       "    print('Caught ValueError:', e)\n",
+       "finally:\n",
+       "    print('Execution of try/except/finally complete')\n",
+       "\n",
+       "# Raising an exception explicitly\n",
+       "def check_positive(n):\n",
+       "    if n < 0:\n",
+       "        raise ValueError('Number must be positive')\n",
+       "    return n\n",
+       "\n",
+       "try:\n",
+       "    print(check_positive(-5))\n",
+       "except ValueError as e:\n",
+       "    print('Error:', e)"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### OS & Pathlib\n",
+       "\n",
+       "Interact with the operating system and filesystem using the `os` module and `pathlib`."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import os\n",
+       "from pathlib import Path\n",
+       "\n",
+       "print('Current Working Directory:', os.getcwd())\n",
+       "print('List of files in the current directory:', os.listdir('.'))\n",
+       "file_path = os.path.join(os.getcwd(), 'example.txt')\n",
+       "print('Does example.txt exist?', os.path.exists(file_path))\n",
+       "\n",
+       "# Using pathlib to check for file existence\n",
+       "path = Path('example.txt')\n",
+       "print('Using pathlib, does example.txt exist?', path.exists())"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Regular Expressions\n",
+       "\n",
+       "Use the `re` module for pattern matching and text processing."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import re\n",
+       "\n",
+       "pattern = r'\\d+'\n",
+       "test_string = 'There are 24 apples and 42 oranges.'\n",
+       "\n",
+       "# re.match looks for a match at the beginning of the string (often returns None)\n",
+       "match = re.match(pattern, test_string)\n",
+       "print('Match at beginning (likely None):', match)\n",
+       "\n",
+       "# re.search finds the first occurrence of the pattern\n",
+       "search = re.search(pattern, test_string)\n",
+       "print('First number found using search:', search.group())\n",
+       "\n",
+       "# re.findall returns all non-overlapping matches\n",
+       "find_all = re.findall(pattern, test_string)\n",
+       "print('All numbers found using findall:', find_all)\n",
+       "\n",
+       "# re.sub replaces occurrences of the pattern\n",
+       "subbed = re.sub(r'apples', 'bananas', test_string)\n",
+       "print('After substitution:', subbed)"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Logging & Debugging\n",
+       "\n",
+       "Log messages and debug your code using the built-in `logging` module and assertions."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import logging\n",
+       "\n",
+       "logging.basicConfig(level=logging.DEBUG)\n",
+       "variable = 'test_value'\n",
+       "logging.debug(f'Debug: {variable}')\n",
+       "\n",
+       "assert 1 == 1, 'This assertion will pass'\n",
+       "# Uncomment the line below to see an assertion error\n",
+       "# assert 1 == 2, 'This assertion will fail'"
+      ]
+     },
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+       "### Concurrency\n",
+       "\n",
+       "Perform concurrent operations using threading and multiprocessing."
+      ]
+     },
+     {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "source": [
+       "import threading\n",
+       "import multiprocessing\n",
+       "\n",
+       "def thread_function(name):\n",
+       "    print(f'Thread {name} is running')\n",
+       "\n",
+       "# Creating and starting a thread\n",
+       "thread = threading.Thread(target=thread_function, args=('TestThread',))\n",
+       "thread.start()\n",
+       "thread.join()\n",
+       "\n",
+       "def process_function(name):\n",
+       "    print(f'Process {name} is running')\n",
+       "\n",
+       "# Creating and starting a process\n",
+       "process = multiprocessing.Process(target=process_function, args=('TestProcess',))\n",
+       "process.start()\n",
+       "process.join()"
+      ]
+     }
+    ],
+    "metadata": {
+     "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+     },
+     "language_info": {
+      "name": "python",
+      "version": "3.x"
+     }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 5
+   }
+   

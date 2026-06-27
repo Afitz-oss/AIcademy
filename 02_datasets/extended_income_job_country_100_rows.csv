@@ -1,0 +1,101 @@
+Country,Job Title,Average Annual Income (USD),Median Annual Income (USD),Income Bracket,Employment Rate (%),Industry
+United States,Software Engineer,120000,110000,High,94.5,Technology
+United States,Teacher,55000,50000,Medium,90,Education
+Canada,Nurse,70000,68000,Medium,92.2,Healthcare
+Canada,Data Scientist,100000,95000,High,93.8,Technology
+Germany,Mechanical Engineer,75000,72000,Medium,89,Engineering
+Germany,Banker,85000,82000,Medium,88.5,Finance
+Japan,Project Manager,95000,90000,High,91.5,Business Services
+Japan,Electrician,45000,43000,Low,87,Construction
+United Kingdom,Lawyer,100000,98000,High,92,Legal
+United Kingdom,Pharmacist,80000,78000,Medium,93.3,Healthcare
+Australia,Plumber,50000,48000,Medium,90.7,Construction
+Australia,Financial Analyst,95000,92000,High,92.5,Finance
+India,Software Engineer,30000,28000,Medium,96,Technology
+India,Teacher,10000,9500,Low,89.2,Education
+Brazil,Doctor,40000,38000,Medium,88,Healthcare
+Brazil,Chef,15000,14000,Low,85.3,Hospitality
+South Africa,Accountant,55000,52000,Medium,88.4,Finance
+South Africa,Police Officer,30000,28000,Low,87.5,Law Enforcement
+France,Architect,85000,84000,High,89.5,Architecture
+France,Engineer,,82000,Medium,86,Engineering
+Mexico,Chef,25000,24000,Low,,Hospitality
+Mexico,Doctor,70000,,High,90.5,Healthcare
+Russia,Lawyer,,43000,Medium,91,Legal
+Russia,Teacher,45000,44000,Low,88.5,
+China,Nurse,35000,,,85.7,Healthcare
+China,Data Scientist,95000,90000,High,94.2,Technology
+South Africa,Plumber,,,High,,Healthcare
+Brazil,Software Engineer,49176,,Low,94.1,Architecture
+Brazil,Plumber,70176,,Low,92.5,Finance
+South Africa,Project Manager,92830,,High,,Architecture
+India,Teacher,75926,71365,Low,,Technology
+Germany,Doctor,55712,54658,Medium,,Education
+France,Plumber,,,High,,Technology
+India,Chef,,,High,,Business Services
+Russia,Plumber,40606,,Medium,91,Legal
+Germany,Pharmacist,48440,,Low,,Business Services
+Brazil,Plumber,90582,,High,88.4,Healthcare
+Brazil,Electrician,100404,97498,Low,,Business Services
+Mexico,Pharmacist,,,Medium,,Healthcare
+France,Chef,,,Low,86.7,Law Enforcement
+France,Police Officer,,,Medium,95.6,Architecture
+Mexico,Project Manager,,,High,,Education
+Japan,Accountant,,,Low,87.4,Education
+China,Mechanical Engineer,100552,,High,93.2,Law Enforcement
+India,Pharmacist,106313,,High,,Education
+India,Data Scientist,108000,104182,Low,89.8,Education
+Brazil,Data Scientist,79722,,High,,Engineering
+Germany,Architect,34057,32336,Medium,,Technology
+Mexico,Plumber,59229,56642,High,90.9,Finance
+Mexico,Mechanical Engineer,,,Medium,,Legal
+Canada,Data Scientist,,,Low,89.1,Engineering
+Russia,Lawyer,106716,103186,Low,92.4,Technology
+Japan,Police Officer,34774,,Medium,,Finance
+Mexico,Accountant,,,High,,Law Enforcement
+India,Financial Analyst,97080,93762,High,93.2,Education
+Australia,Banker,49994,48392,Low,,Finance
+India,Project Manager,,,Medium,,Hospitality
+United Kingdom,Pharmacist,81619,79398,High,,Hospitality
+Mexico,Police Officer,103158,,Low,92.6,Business Services
+India,Chef,,,Medium,,Legal
+India,Nurse,48045,,Low,,Business Services
+South Africa,Software Engineer,65901,,High,,Healthcare
+Japan,Nurse,,,Low,86,Finance
+South Africa,Chef,,,Medium,92.8,Architecture
+Australia,Data Scientist,65636,63704,High,,Law Enforcement
+France,Nurse,81356,80090,Medium,90.5,Finance
+Germany,Doctor,,,High,,Engineering
+Russia,Architect,,,High,90,Legal
+Japan,Mechanical Engineer,102617,100115,Low,,Construction
+United States,Accountant,,,Medium,,Business Services
+South Africa,Chef,89861,89471,Low,90.7,Healthcare
+Canada,Police Officer,,,Low,,Education
+South Africa,Teacher,104457,103320,Medium,91.9,Healthcare
+South Africa,Chef,46776,41893,High,86.4,Technology
+France,Lawyer,73712,69662,Medium,,Construction
+Germany,Teacher,,,Low,89.9,Business Services
+Japan,Electrician,57614,,Medium,,Law Enforcement
+Australia,Chef,,,High,91.1,Healthcare
+Brazil,Architect,,,High,,Architecture
+South Africa,Software Engineer,,,High,87.5,Hospitality
+Australia,Doctor,67805,63532,Medium,,Engineering
+China,Banker,,,High,86.8,Finance
+France,Mechanical Engineer,,,Low,87.2,Healthcare
+South Africa,Financial Analyst,79557,,High,86.4,Law Enforcement
+Australia,Doctor,,,High,,Law Enforcement
+China,Data Scientist,,,Low,88.1,Healthcare
+China,Financial Analyst,43494,,High,91.5,Finance
+Canada,Chef,30333,,High,94.5,Law Enforcement
+Australia,Financial Analyst,,,Low,91.9,Business Services
+Japan,Lawyer,62735,,High,,Engineering
+India,Electrician,,,Medium,,Architecture
+Brazil,Project Manager,52501,,Medium,,Law Enforcement
+South Africa,Software Engineer,,,High,88.1,Technology
+Australia,Teacher,,,Low,87.7,Construction
+Japan,Pharmacist,,,Low,,Finance
+China,Teacher,,,Medium,,Healthcare
+Mexico,Lawyer,59660,59104,High,,Hospitality
+United States,Lawyer,,,High,,Business Services
+Japan,Architect,82712,81285,Medium,92,Technology
+United Kingdom,Project Manager,,,High,,Healthcare

@@ -1,0 +1,4 @@
+date,category,problem_name,pattern_tag,root_cause,fix_summary,next_action,revisit_date,time_spent_min,status,notes
+2025-10-08,Algo,Minimum Window Substring,Sliding Window,"Missed shrinking condition when counts hit zero","Maintain need counter; shrink while need==0","Re-solve tomorrow, write template",2025-10-09,45,open,"template row example"
+
+
