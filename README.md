@@ -45,6 +45,15 @@ If you're new to coding, a few terms will come up in setup. Here's what they mea
 
 ## Setup (One Time — ~15 Minutes)
 
+### Windows users — read this first
+
+The CLI onboarding script (`./scripts/aicademy.sh`) is written in bash and won't run in PowerShell or Command Prompt. Pick one of these before continuing:
+
+- **WSL (recommended):** Install Windows Subsystem for Linux from [aka.ms/wsl](https://aka.ms/wsl), then run everything inside an Ubuntu shell. Cursor can open WSL folders directly.
+- **Git Bash:** Comes with [Git for Windows](https://git-scm.com/download/win) and runs bash scripts natively. Open it from the Start menu after installing.
+
+Everywhere this guide says "open your terminal", Windows users should open WSL or Git Bash. Mac and Linux users can use the default terminal.
+
 ### Step 1 — Create a free GitHub account
 
 Go to [github.com](https://github.com) and sign up. It's free.
@@ -139,7 +148,7 @@ Your tutor has already read your profile and curriculum. It's ready to go.
 
 ```
 Open Cursor (AIcademy folder)
-    → Click 🎓 AIcademy in the status bar — or just open the chat
+    → Click AIcademy in the status bar — or just open the chat
     → AI reads your profile + competency map automatically
     → AI suggests what to work on today
     → AI generates a problem tailored to your level + goal track
@@ -177,13 +186,16 @@ AIcademy/
 │   └── software_engineering.ipynb  Git, testing, REST APIs
 │
 ├── 01_problem_banks/             Source-of-truth problems (read-only)
-│   ├── python_basics/            Beginner Stage 0–4 problems
+│   ├── python_basics/            Stage 0–4 problems
 │   ├── python_fundamentals/      Stage 5–6 problems
-│   ├── ai_engineering/           LLM + RAG problems
-│   ├── algorithms/               Algorithm patterns (easy → medium)
-│   └── sql/                      SQL Level 1–3
+│   ├── ai_engineering/           Pydantic, agents, RAG, LangGraph, FastAPI, evals
+│   ├── algorithms/               The top 8 LeetCode patterns (Big O required)
+│   ├── data_science/             NumPy, stats, ML (supervised/unsupervised)
+│   ├── software_engineering/     Big O, API design, patterns, testing, async
+│   └── pandas/                   Pandas analysis problems
 │
 ├── 02_datasets/                  Data files for practice problems
+│   └── rag_corpus/               Short docs to build a RAG system over
 │
 ├── 03_prompts/                   ★ Reusable prompts for the AI
 │   ├── onboarding.md             First-run setup
@@ -207,11 +219,19 @@ AIcademy/
 ├── 08_learner_profile/           ★ Your personal progress (AI-generated)
 │   ├── learning_path.md          Your personalized curriculum
 │   ├── competency_map.md         Skill tree with progress tracking
-│   └── intake_notes.md           AI's observations from your profile
+│   ├── intake_notes.md           AI's observations from your profile
+│   └── session_state.md          Handoff flag (CLI ↔ chat tutor)
 │
-└── 09_roadmaps/                  Learning path references (read-only)
-    ├── python_first_principles.md  Stage 0–6 curriculum map
-    └── tools_and_setup.md          Git, GitHub, Python, Cursor, API keys
+├── 09_roadmaps/                  Learning path references (read-only)
+│   ├── python_first_principles.md  Stage 0–6 curriculum map
+│   ├── ai_engineer.md              AI Engineer track (15 steps + transformer capstone)
+│   ├── data_scientist.md           Data Scientist track
+│   ├── software_engineer.md        Software Engineer track
+│   └── tools_and_setup.md          Git, GitHub, Python, Cursor, API keys
+│
+└── scripts/                      ★ CLI onboarding
+    ├── aicademy.sh               Terminal questionnaire (auto-runs on folder open)
+    └── trigger_agent.py          Cursor SDK bridge — generates your curriculum
 ```
 
 ---

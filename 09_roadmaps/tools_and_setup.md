@@ -4,6 +4,17 @@
 
 ---
 
+## Windows users — read this first
+
+The AIcademy CLI (`./scripts/aicademy.sh`) is a bash script and will not run in PowerShell or Command Prompt. Before following the rest of this guide, install one of:
+
+- **WSL (recommended):** Windows Subsystem for Linux — install from [aka.ms/wsl](https://aka.ms/wsl) and use an Ubuntu shell. Cursor can open WSL folders directly.
+- **Git Bash:** Bundled with [Git for Windows](https://git-scm.com/download/win) — opens from the Start menu after installing and runs bash scripts natively.
+
+Whenever this guide says "open your terminal," Windows users should use WSL or Git Bash. Mac and Linux users can use the default terminal app.
+
+---
+
 ## What You Need (Overview)
 
 | Tool | What it is | Why you need it |
