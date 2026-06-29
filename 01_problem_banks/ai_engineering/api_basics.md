@@ -8,7 +8,7 @@
 
 ## 1. Your First API Call
 
-**Difficulty:** beginner
+**Difficulty:** Beginner
 **Stage:** AI Engineering
 **Pattern / topic:** OpenAI API, environment variables, basic completion
 **Goal track relevance:** Every AI product starts with an API call. This is the "Hello World" of AI engineering. Once you can reliably make a call and parse the response, you can build anything on top of it.
@@ -40,7 +40,7 @@ Write a Python script that:
 
 ## 2. Multi-Turn Conversation
 
-**Difficulty:** easy
+**Difficulty:** Beginner
 **Stage:** AI Engineering
 **Pattern / topic:** Conversation history, message roles, stateful API usage
 **Goal track relevance:** Every chatbot, coding assistant, and AI tutor works the same way: maintain a list of messages and send the full history with every API call. Understanding this is fundamental to building any conversational AI.
@@ -74,7 +74,7 @@ Requirements:
 
 ## 3. AI-Powered Data Extractor
 
-**Difficulty:** medium
+**Difficulty:** Intermediate
 **Stage:** AI Engineering
 **Pattern / topic:** Structured output, JSON mode, real-world data processing
 **Goal track relevance:** Extracting structured data from unstructured text is one of the most valuable things you can do with an LLM in production — parsing resumes, emails, customer feedback, contracts.

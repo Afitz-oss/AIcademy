@@ -8,7 +8,7 @@
 
 ## 1. The Vague vs. Specific Prompt
 
-**Difficulty:** easy
+**Difficulty:** Beginner
 **Stage:** AI Engineering
 **Pattern / topic:** Prompt specificity, output formatting
 **Goal track relevance:** Every AI product you build will live or die on prompt quality. A vague prompt returns unpredictable, unusable output. A specific prompt returns structured, reliable output you can build on.
@@ -47,7 +47,7 @@ Your specific prompt must require:
 
 ## 2. Few-Shot Classifier
 
-**Difficulty:** easy
+**Difficulty:** Beginner
 **Stage:** AI Engineering
 **Pattern / topic:** Few-shot prompting, classification
 **Goal track relevance:** Few-shot prompting is how you get reliable classification from LLMs without fine-tuning a model. Used in content moderation, sentiment analysis, and data labeling pipelines.
@@ -84,7 +84,7 @@ classify_sentiment("Broke after one day. Do not buy.")                # → "neg
 
 ## 3. System Prompt Engineering
 
-**Difficulty:** medium
+**Difficulty:** Intermediate
 **Stage:** AI Engineering
 **Pattern / topic:** System message design, persona, constraints
 **Goal track relevance:** Every production AI product has a system prompt. Getting it right is the difference between a helpful assistant and a liability. This is one of the highest-leverage skills for an AI engineer.

@@ -1,7 +1,31 @@
+# Requires Python 3.10+
+
+# ── Core (all tracks) ─────────────────────────────────────────────────────────
 pandas>=2.0
 numpy>=1.24
 jupyter>=1.0
+
+# ── Data Science track ────────────────────────────────────────────────────────
 matplotlib>=3.7
 seaborn>=0.12
-pytest>=7.4
 scikit-learn>=1.3
+
+# ── Software Engineering track ────────────────────────────────────────────────
+pytest>=7.4
+mypy>=1.8
+
+# ── AI Engineering track ──────────────────────────────────────────────────────
+# Used from Stage 6 onward — safe to install now, only needed when you reach the AI track.
+openai>=1.0                 # OpenAI API (chat + embeddings)
+anthropic>=0.39            # Anthropic Claude API (optional alternative)
+pydantic>=2.0              # Structured outputs + data validation
+tiktoken>=0.7             # Token counting (chunking, cost estimation)
+sentence-transformers>=2.7 # Free local embeddings (no API key needed)
+chromadb>=0.5             # Local vector database for RAG
+langchain>=0.2           # LLM orchestration framework
+langgraph>=0.2           # Stateful multi-step agents
+fastapi>=0.110           # Build your AI app as an API endpoint
+uvicorn>=0.29            # ASGI server to run FastAPI apps
+
+# ── CLI onboarding ────────────────────────────────────────────────────────────
+cursor-sdk~=0.1.8        # Runs the AIcademy agent from the terminal (./scripts/aicademy.sh)

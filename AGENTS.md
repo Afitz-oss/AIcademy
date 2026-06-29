@@ -6,6 +6,25 @@ Your job is to teach, guide, generate problems, grade solutions, and adapt to ea
 
 ---
 
+## Step 0 — Session State Check (ALWAYS run this first, before anything else)
+
+Read `08_learner_profile/session_state.md` before reading any other file.
+
+**If `status: onboarded` AND `first_problem_delivered: false`:**
+The learner ran `./scripts/aicademy.sh` in the terminal and their profile is ready.
+Do not wait for them to say anything specific. Immediately run the **Onboarding Protocol** below.
+After delivering the first problem, write to `08_learner_profile/session_state.md`:
+```
+status: active
+first_problem_delivered: true
+last_updated: <today's date>
+```
+
+**If the file doesn't exist, OR `status` is `not_started` or `active`:**
+Continue to the regular Profile Check below.
+
+---
+
 ## Step 0 — Profile Check (run this before EVERY interaction)
 
 Before doing anything else, always:
@@ -21,7 +40,7 @@ If `08_learner_profile/learning_path.md` is empty or says "not yet generated", t
 
 ## Onboarding Protocol
 
-Triggered when: `learning_path.md` is blank OR learner says "I just filled out my profile" OR it's their first interaction.
+Triggered when: `learning_path.md` is blank OR `session_state.md` has `first_problem_delivered: false` OR it's their first interaction.
 
 Steps:
 1. Read `LEARNER_PROFILE.md` carefully
@@ -67,6 +86,7 @@ Do not overwhelm them with information. One concept, one problem to start.
 | Error log entries | append rows to `07_planning/error_log.csv` |
 | Competency map updates | `08_learner_profile/competency_map.md` |
 | Onboarding output | `08_learner_profile/learning_path.md` and `intake_notes.md` |
+| Session handoff flag | `08_learner_profile/session_state.md` — update after delivering first problem |
 | New canonical reference solutions | `05_solutions/<area>/<descriptive_name>.py` |
 
 ---
@@ -143,7 +163,7 @@ Every problem written to `problems.md` must follow this format:
 ```markdown
 ## <N>. <Title>
 
-**Difficulty:** beginner | easy | medium | hard
+**Difficulty:** Beginner | Intermediate | Advanced
 **Stage:** <Stage number from python_first_principles.md>
 **Pattern / topic:** <e.g. for loop, dictionary counting, groupby + agg>
 **Goal track relevance:** <1 sentence — why this matters for their goal: AI engineer / data scientist / software engineer>
@@ -205,6 +225,34 @@ When a learner submits a solution:
 | `🟢 mastered` | Solved 3+ with no hints, can explain it back |
 
 After every graded session, update the relevant skills in `competency_map.md`.
+
+---
+
+## Difficulty Standard (use everywhere — no other labels)
+
+Every problem uses exactly one of these three tiers. Do not use "easy/medium/hard" anymore.
+
+| Tier | Meaning |
+|---|---|
+| **Beginner** | Solvable with concepts from the current stage only. Single concept, clear path. |
+| **Intermediate** | Requires combining 2+ concepts, one possibly from an earlier stage. Some edge-case handling. |
+| **Advanced** | Requires optimization, careful edge-case handling, or mirrors real interview/production difficulty. |
+
+When generating a set of problems for any topic, aim for a mix: at least one of each tier where the topic allows it.
+
+---
+
+## Bring Your Own Dataset
+
+The default dataset is small (`02_datasets/extended_income_job_country_100_rows.csv`, 100 rows). Learners can supply their own.
+
+**Two modes, depending on track:**
+
+- **AI Engineer & Software Engineer tracks (file-drop):** When generating a data-related problem, tell the learner: *"The default dataset is small. If you'd rather use your own, drop any CSV into `02_datasets/` and tell me its filename — I'll generate the problem against it."* If they name a file, inspect its columns/types first, then generate.
+
+- **Data Scientist track (guided):** Use the structured intake in `03_prompts/upload_dataset.md`. Before generating ML problems on a learner-supplied dataset, walk them through inspecting it (shape, nulls, dtypes, target column, class balance). Dataset inspection is itself a graded skill on this track. For small-data ML where the default 100-row file is too small, prefer scikit-learn built-ins (`load_iris`, `make_classification`, `load_diabetes`) and say so.
+
+Always tell the learner at problem-generation time that bringing their own dataset is an option.
 
 ---
 
