@@ -13,7 +13,8 @@ env/
 .DS_Store
 *.swp
 *.swo
-.vscode/
+.vscode/*
+!.vscode/tasks.json
 .idea/
 build/
 dist/
