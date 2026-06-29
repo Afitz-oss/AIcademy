@@ -40,8 +40,9 @@ ask() {
   local allow_empty="${3:-false}"
   local result
 
-  echo -e "\n${BOLD}$prompt${RESET}"
-  [[ -n "$placeholder" ]] && echo -e "${DIM}  e.g. $placeholder${RESET}"
+  # All UI goes to stderr so it isn't swallowed by $(...) command substitution.
+  echo -e "\n${BOLD}$prompt${RESET}" >&2
+  [[ -n "$placeholder" ]] && echo -e "${DIM}  e.g. $placeholder${RESET}" >&2
 
   while true; do
     read -rp "  → " result
@@ -49,7 +50,7 @@ ask() {
       echo "$result"
       return
     fi
-    echo -e "${YELLOW}  Required — please enter a value.${RESET}"
+    echo -e "${YELLOW}  Required — please enter a value.${RESET}" >&2
   done
 }
 
@@ -58,9 +59,9 @@ pick() {
   shift
   local -a labels=("$@")
 
-  echo -e "\n${BOLD}$prompt${RESET}"
+  echo -e "\n${BOLD}$prompt${RESET}" >&2
   for i in "${!labels[@]}"; do
-    echo "  $((i+1)). ${labels[$i]}"
+    echo "  $((i+1)). ${labels[$i]}" >&2
   done
 
   local choice
@@ -70,7 +71,7 @@ pick() {
       echo "${labels[$((choice-1))]}"
       return
     fi
-    echo -e "${YELLOW}  Pick a number between 1 and ${#labels[@]}${RESET}"
+    echo -e "${YELLOW}  Pick a number between 1 and ${#labels[@]}${RESET}" >&2
   done
 }
 
