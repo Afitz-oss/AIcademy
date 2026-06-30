@@ -1,4 +1,12 @@
-Data Wrangling and Cleaning
+# Pandas — Advanced Data Science
+
+**Knowledgebase reference:** `00_knowledgebase/pandas_python_reference.ipynb` → sections 1.5 (Aggregation & Grouping), 1.7 (Data Transformation), 1.11 (Rolling Windows), 1.12 (Multi-Index)
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+**Dataset:** `02_datasets/extended_income_job_country_100_rows.csv` unless specified otherwise.
+
+---
+
+## Data Wrangling and Cleaning
 Standardize Column Names:
 Write a function that takes any DataFrame and converts its column names to snake_case (e.g., Average Annual Income (USD) becomes average_annual_income_usd).
 

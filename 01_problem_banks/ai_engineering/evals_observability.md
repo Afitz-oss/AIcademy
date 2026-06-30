@@ -1,6 +1,7 @@
 # AI Engineering — Evals + Observability Problem Bank
 
 **Who this is for:** AI Engineer track, after caching.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-1 (LLM fundamentals — observability rests on understanding what the model is doing); roadmap step 14 for the discipline.
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 14
 **Setup required:** `OPENAI_API_KEY` in `.env`; LangSmith key optional for problem 3
 

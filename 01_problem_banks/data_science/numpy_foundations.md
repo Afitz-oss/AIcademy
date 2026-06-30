@@ -1,5 +1,6 @@
 # Data Science — NumPy Foundations
 
+**Knowledgebase reference:** `00_knowledgebase/data_science.ipynb` → DS-1 (Data fundamentals — NumPy arrays are the substrate underneath pandas, scikit-learn, and PyTorch). Note: no dedicated NumPy notebook section exists yet; cite DS-1 plus the roadmap for sequencing.
 **Roadmap:** `09_roadmaps/data_scientist.md` → step 1
 **Setup required:** `pip install numpy`
 

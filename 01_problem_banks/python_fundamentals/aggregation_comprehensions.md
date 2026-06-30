@@ -1,3 +1,10 @@
+# Python Fundamentals — Aggregation with Comprehensions
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 2 (collections); concept is Stage 5 in `09_roadmaps/python_first_principles.md` (list/dict comprehensions)
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
 | Category                            | Problem                                                                                                | Suggested Method                                 |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
 | Aggregation with list comprehension | Compute the sum of all even numbers squared from a list.                                               | `sum(x**2 for x in numbers if x % 2 == 0)`       |

@@ -1,7 +1,7 @@
 # AI Engineering — Pydantic + Structured Outputs Problem Bank
 
 **Who this is for:** Learners on the AI Engineer track who have completed raw API calls (`api_basics.md`).
-**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb`
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-3 (prompt engineering — structured output section)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 2
 **Setup required:** `pip install pydantic openai`; `OPENAI_API_KEY` in `.env`
 

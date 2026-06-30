@@ -1,6 +1,7 @@
 # AI Engineering — Memory Patterns Problem Bank
 
 **Who this is for:** AI Engineer track, after tool use / function calling.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-6 (AI Agents — memory is what makes them useful across turns)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 4
 **Setup required:** `OPENAI_API_KEY` in `.env`
 

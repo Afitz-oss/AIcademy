@@ -8,11 +8,14 @@ Structure per day:
 - Error Log (5–10 min)
 
 Primary reference assets in this workspace (use these often):
-- `Akim's Programming Knowledgebase.ipynb` (Pandas + Python reference, sections 1.x and 2.x)
-- `Coding Practice Dataset Manpulation.txt` (Pandas exercises)
-- `Looping_through_dataset.txt` (Pandas iteration/aggregation tasks)
-- `Generator expressions.txt`, `aggregation_list.txt`, `Dict_count_problems.txt`, `Looping_problems.txt`, `Problem_bank_with_methods.txt`
-- Datasets: `extended_income_job_country_100_rows.csv`, `cleaned_data.csv`
+- `00_knowledgebase/pandas_python_reference.ipynb` — Pandas + Python reference, sections 1.x and 2.x
+- `00_knowledgebase/algorithms.ipynb` — A-1 (Big O) through A-9 (DP); concept primers for every algorithm pattern
+- `00_knowledgebase/ai_engineering.ipynb` — AE-1 through AE-6 (LLMs, APIs, prompting, embeddings, RAG, agents)
+- `00_knowledgebase/software_engineering.ipynb` — SE-1 through SE-6 (Git, clean code, OOP, pytest, REST APIs)
+- `01_problem_banks/pandas/dataset_manipulation.md` (Pandas selection / filtering / dict creation)
+- `01_problem_banks/pandas/iteration_aggregation.md` (Pandas iteration + groupby)
+- `01_problem_banks/python_fundamentals/{generators,aggregation_comprehensions,dict_counting,loops,builtins_and_methods}.md`
+- Datasets: `02_datasets/extended_income_job_country_100_rows.csv`, `02_datasets/cleaned_data.csv`
 
 How to use this plan
 1) Pick the day below, check off the checklist, and timebox strictly.
@@ -30,14 +33,14 @@ Day-by-Day
 
 Monday — Primary: Python + Pandas | Secondary: Algorithms (Easy)
 - Warm-Up (pick 2–3):
-  - `Generator expressions.txt`: any row (e.g., Sum evens; Any match?)
-  - `Dict_count_problems.txt`: key check vs init
-  - `Looping_problems.txt`: lists/strings loops
+  - `01_problem_banks/python_fundamentals/generators.md`: any row (e.g., Sum evens; Any match?)
+  - `01_problem_banks/python_fundamentals/dict_counting.md`: key check vs init
+  - `01_problem_banks/python_fundamentals/loops.md`: lists/strings loops
 - Primary (do 2):
-  - From `Coding Practice Dataset Manpulation.txt` → choose 2 distinct topics, e.g.:
+  - From `01_problem_banks/pandas/dataset_manipulation.md` → choose 2 distinct topics, e.g.:
     - “Get the Index and Retrieve Data” + “Pandas DataFrame Creation from a Dictionary”
     - or any “Filtering Data with Pandas” / “Accessing Specific Data Using loc”
-  - From `Looping_through_dataset.txt` → choose 1 mapping/aggregation line and implement vectorized first
+  - From `01_problem_banks/pandas/iteration_aggregation.md` → choose 1 mapping/aggregation line and implement vectorized first
 - Secondary (pick 1 easy algorithm): see Appendix A: Easy Patterns (Hash map, Two Pointers, Stack basics)
 - Error Log (5–10m): note 1 Pandas gotcha + 1 algorithm pattern edge case
 
@@ -60,13 +63,13 @@ Thursday — Primary: Algorithms II (Intermediate) | Secondary: Pandas mini-task
 - Primary (2 medium): Sliding Window, Prefix Sums, Binary Search variants, Graph BFS/DFS, or Heaps
 - Secondary (choose 1):
   - Refactor a previous Pandas solution for readability/perf
-  - Or one short manipulation from `Looping_through_dataset.txt` (e.g., Income Difference + sort)
+  - Or one short manipulation from `01_problem_banks/pandas/iteration_aggregation.md` (e.g., Income Difference + sort)
 - Error Log: capture a complexity note and one alternative approach
 
 Friday — Primary: Integration (Mixed) | Secondary: Weak Spot Review
 - Warm-Up: 1 Python or SQL quickie
 - Primary:
-  - 1 Pandas exercise (from `Coding Practice Dataset Manpulation.txt` or `Looping_through_dataset.txt`)
+  - 1 Pandas exercise (from `01_problem_banks/pandas/dataset_manipulation.md` or `01_problem_banks/pandas/iteration_aggregation.md`)
   - 1 medium algorithm (speed + explanation)
   - 1 light SQL
 - Secondary: review 1 weak area from your error log for 30–40 min
@@ -89,23 +92,23 @@ Sunday — Rest / Light Review | Secondary: Error Log & Pattern Analysis
 
 Warm-Up Pool (rotate; 5–10 minute bites)
 - Python fundamentals:
-  - `Generator expressions.txt` rows 1–11 (any/all/min/max/next/first-match)
-  - `Dict_count_problems.txt` init vs exists; small dict-count kata
-  - `Looping_problems.txt` strings/dicts/tuples loop variants
-  - `Problem_bank_with_methods.txt` quick-fire built-ins and methods
-- Pandas micro-drills (use `Akim's Programming Knowledgebase.ipynb`):
+  - `01_problem_banks/python_fundamentals/generators.md` rows 1–11 (any/all/min/max/next/first-match)
+  - `01_problem_banks/python_fundamentals/dict_counting.md` init vs exists; small dict-count kata
+  - `01_problem_banks/python_fundamentals/loops.md` strings/dicts/tuples loop variants
+  - `01_problem_banks/python_fundamentals/builtins_and_methods.md` quick-fire built-ins and methods
+- Pandas micro-drills (use `00_knowledgebase/pandas_python_reference.ipynb`):
   - 1.2: `df.info`, `df.describe`, `df.nunique`
   - 1.3: `loc`, `iloc`, `isin`, `str.contains`
   - 1.5: `groupby().agg`, `value_counts`
   - 1.6: missing values: `isna`, `fillna`, `dropna`
 
 Pandas Exercise Menu (pull from these all week)
-- From `Coding Practice Dataset Manpulation.txt` (examples):
+- From `01_problem_banks/pandas/dataset_manipulation.md` (examples):
   - Index & retrieve “Software Engineer”; build `job_incomes` dict
   - Nested `country_data` dict → DataFrame
   - Filter income > 90k; set job titles as index; `.loc` country + job
   - Industry filtering; Technology > 80k; label columns
-- From `Looping_through_dataset.txt` (pick lines):
+- From `01_problem_banks/pandas/iteration_aggregation.md` (pick lines):
   - Aggregations (avg per industry, median per country)
   - Mapping (Income Difference; Above Median flag; contains "Engineer")
   - Sorting (top 5 highest-paying)

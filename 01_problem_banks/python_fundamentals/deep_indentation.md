@@ -1,4 +1,11 @@
-Nested Divisibility Checker
+# Python Fundamentals — Deep Indentation (Nested Logic)
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 1 (conditionals — if/elif/else) and Stage 2 (loops). Drill in reading nested control flow line by line.
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
+## Nested Divisibility Checker
 Iterate through numbers 1–50.
 
 For each number, if it is divisible by 2, print a message.

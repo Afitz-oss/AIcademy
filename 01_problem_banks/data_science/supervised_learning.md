@@ -1,5 +1,6 @@
 # Data Science — Supervised Learning
 
+**Knowledgebase reference:** `00_knowledgebase/data_science.ipynb` → DS-5 (What is ML?) and DS-6 (Model Evaluation)
 **Roadmap:** `09_roadmaps/data_scientist.md` → step 7
 **Setup required:** `pip install scikit-learn numpy pandas`
 **Prerequisite:** feature engineering + model evaluation basics

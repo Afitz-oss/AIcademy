@@ -1,6 +1,7 @@
 # AI Engineering — Embeddings + Vector Databases Problem Bank
 
 **Who this is for:** AI Engineer track, after building a raw agent.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-4
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 6
 **Setup required:** `pip install sentence-transformers numpy chromadb`; `OPENAI_API_KEY` only for problem 4
 

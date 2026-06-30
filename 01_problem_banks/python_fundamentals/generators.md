@@ -1,3 +1,10 @@
+# Python Fundamentals — Generator Expressions
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 2 (collections/iteration); concept is Stage 6 in `09_roadmaps/python_first_principles.md` (generators + `yield`). Critical for memory-efficient batch iteration in PyTorch and streaming AI pipelines.
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
 | Data Structure                | Problem                            | Suggested Method / Pattern                                     | Example                                                                         |
 | ----------------------------- | ---------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | List/tuple                    | Sum evens                          | `sum(x for x in xs if x % 2 == 0)`                             | `sum(x for x in nums if x % 2 == 0)`                                            |

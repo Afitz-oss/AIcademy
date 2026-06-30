@@ -1,6 +1,7 @@
 # AI Engineering — RAG (Retrieval-Augmented Generation) Problem Bank
 
 **Who this is for:** AI Engineer track, after embeddings + vector databases.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-5
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 7
 **Setup required:** `pip install chromadb sentence-transformers tiktoken openai`; `OPENAI_API_KEY` in `.env`
 **Corpus:** `02_datasets/rag_corpus/` — short markdown docs on AI engineering topics

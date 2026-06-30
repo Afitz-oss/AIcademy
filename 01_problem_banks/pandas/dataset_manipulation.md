@@ -1,4 +1,12 @@
-Problem Set
+# Pandas — Dataset Manipulation
+
+**Knowledgebase reference:** `00_knowledgebase/pandas_python_reference.ipynb` → sections 1.1 (Loading), 1.2 (Exploration), 1.3 (Selection & Filtering), 1.4 (Sorting), 1.5 (Aggregation)
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+**Dataset:** `02_datasets/extended_income_job_country_100_rows.csv` unless specified otherwise.
+
+---
+
+## Problem Set
 Get the Index and Retrieve Data:
 
 Using the dataset you created (income_job_country_data.csv), find the index of the first instance of the job title "Software Engineer" and print the average annual income for this entry.

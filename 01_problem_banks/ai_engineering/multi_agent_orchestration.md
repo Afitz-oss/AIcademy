@@ -1,6 +1,7 @@
 # AI Engineering — Multi-Agent Orchestration Problem Bank
 
 **Who this is for:** AI Engineer track, after LangGraph.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-6 (AI Agents — composing multiple agents)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 11
 **Setup required:** `OPENAI_API_KEY` in `.env` (LangGraph optional but recommended)
 

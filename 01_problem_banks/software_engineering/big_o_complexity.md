@@ -1,5 +1,6 @@
 # Software Engineering — Big O + Complexity Analysis
 
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-1 (Big O — How to Think About Complexity); cross-track companion
 **Roadmap:** `09_roadmaps/software_engineer.md` → step 1
 
 > **Why this matters:** Big O is the universal language for reasoning about whether code will scale. The Algorithms track makes you *state* complexity; this bank makes you *analyze and design for* it — including at the API and system level.

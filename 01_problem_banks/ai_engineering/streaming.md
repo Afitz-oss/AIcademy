@@ -1,6 +1,7 @@
 # AI Engineering — Streaming Problem Bank
 
 **Who this is for:** AI Engineer track, after RAG.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-2 (API basics — streaming is an API/response-handling concept)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 8
 **Setup required:** `OPENAI_API_KEY` in `.env`
 

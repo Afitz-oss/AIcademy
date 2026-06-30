@@ -1,3 +1,11 @@
+# Pandas — Iteration and Aggregation
+
+**Knowledgebase reference:** `00_knowledgebase/pandas_python_reference.ipynb` → section 1.5 (Aggregation & Grouping); prefer vectorized ops, fall back to `iterrows`/`apply` only when needed
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+**Dataset:** `02_datasets/extended_income_job_country_100_rows.csv` unless specified otherwise.
+
+---
+
 Category	Problem	Suggested Method
 Row Iteration	Print each job title and its average income.	iterrows()
 Row Iteration	For each row, print if the average income is greater than the median income.	iterrows() + if

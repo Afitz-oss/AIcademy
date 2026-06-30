@@ -1,6 +1,7 @@
 # AI Engineering — Caching + Cost Optimization Problem Bank
 
 **Who this is for:** AI Engineer track, after FastAPI.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-2 (API basics — caching applies to API responses)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 13
 **Setup required:** `OPENAI_API_KEY` in `.env`; embeddings setup for problem 2
 

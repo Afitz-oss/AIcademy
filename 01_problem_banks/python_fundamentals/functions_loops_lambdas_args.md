@@ -1,3 +1,10 @@
+# Python Fundamentals — Functions, Loops, Lambdas, *args/**kwargs
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 3 (functions); concepts are Stage 5 (`*args`/`**kwargs`) and Stage 6 (lambda, `map`, `filter`) in `09_roadmaps/python_first_principles.md`
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
 Create similar problems like this # Import pandas
 import pandas as pd
 

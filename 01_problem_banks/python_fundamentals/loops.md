@@ -1,3 +1,10 @@
+# Python Fundamentals — Loops
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 2 (for/while, `range`, `enumerate`, common pitfalls like mutating during iteration)
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
 Data Structure	Problem	Suggested Method
 Lists	Loop through a list and print each element.	for-loop
 Lists	Loop through a list and print elements that are greater than 10.	for-loop + if

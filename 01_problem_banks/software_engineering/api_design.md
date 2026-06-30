@@ -1,5 +1,6 @@
 # Software Engineering — API Design
 
+**Knowledgebase reference:** `00_knowledgebase/software_engineering.ipynb` → SE-5 (REST APIs with FastAPI)
 **Roadmap:** `09_roadmaps/software_engineer.md` → step 5
 **Setup required:** `pip install fastapi uvicorn` (for problems that build endpoints)
 

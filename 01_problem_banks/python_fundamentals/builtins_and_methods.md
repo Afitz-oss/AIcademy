@@ -1,3 +1,10 @@
+# Python Fundamentals — Built-ins and Methods
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 1 (data types) and Stage 2 (collections — list/dict/set methods)
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
 Category	Problem	Suggested Method
 Core Built-in Functions	Given a list of integers, return the sum of all even numbers.	sum()
 Core Built-in Functions	Return the maximum word length from a list of words.	max()

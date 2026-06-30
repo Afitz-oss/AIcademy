@@ -2,6 +2,8 @@
 
 Maps to the **Data Scientist track** in `09_roadmaps/data_scientist.md`. Problems emphasize *understanding what results mean*, not just running `model.fit()`.
 
+**Knowledgebase reference:** `00_knowledgebase/data_science.ipynb` — overview (DS-1 Data → DS-2 Stats → DS-3 Pandas Patterns → DS-4 Visualization → DS-5 ML → DS-6 Evaluation). Cite the matching section when teaching or grading. For pandas-heavy work also see `pandas_python_reference.ipynb`.
+
 **Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
 
 **Datasets:**

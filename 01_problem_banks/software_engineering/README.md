@@ -2,6 +2,8 @@
 
 Maps to the **Software Engineer track** in `09_roadmaps/software_engineer.md`. Focus: the craft beyond "it works" — clean, tested, typed, efficient, maintainable code.
 
+**Knowledgebase reference:** `00_knowledgebase/software_engineering.ipynb` — overview (SE-1 Git → SE-2 Clean Code → SE-3 OOP → SE-4 pytest → SE-5 REST APIs → SE-6 Reading Docs). For algorithms/complexity work also see `algorithms.ipynb` (A-1 Big O).
+
 **Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
 
 ---

@@ -1,6 +1,7 @@
 # AI Engineering — FastAPI AI Endpoints Problem Bank
 
 **Who this is for:** AI Engineer track, after multi-agent orchestration.
+**Knowledgebase reference:** `00_knowledgebase/software_engineering.ipynb` → SE-5 (REST APIs with FastAPI — cross-track)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 12
 **Setup required:** `pip install fastapi uvicorn`; `OPENAI_API_KEY` in `.env`
 

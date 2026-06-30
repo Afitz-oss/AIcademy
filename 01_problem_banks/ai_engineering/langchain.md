@@ -1,6 +1,7 @@
 # AI Engineering — LangChain Problem Bank
 
 **Who this is for:** AI Engineer track, after building everything raw (agent, RAG, streaming).
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-6 (AI Agents)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 9
 **Setup required:** `pip install langchain langchain-openai`; `OPENAI_API_KEY` in `.env`
 

@@ -1,4 +1,11 @@
-Problem 2: Common Elements Finder
+# Python Fundamentals — Medium-Easy Mixed Problems
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stages 2–3 (collections, loops, functions); some problems use Stage 5 concepts (`*args`, comprehensions) — see `09_roadmaps/python_first_principles.md`
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
+## Problem 2: Common Elements Finder
 Data Structure	Problem	Suggested Method
 Lists	Loop through two lists and find elements that exist in both.	for-loop + in
 Sets	Convert lists to sets and find the intersection.	set() + intersection()

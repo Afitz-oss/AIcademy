@@ -1,4 +1,11 @@
-Coding Practice Problems 
+# Python Fundamentals — Functions
+
+**Knowledgebase reference:** `00_knowledgebase/python_basics.ipynb` → Stage 3 (defining functions, parameters vs. arguments, `return` vs. `print`, scope)
+**Difficulty standard:** every problem is Beginner / Intermediate / Advanced (see `AGENTS.md`).
+
+---
+
+## Coding Practice Problems
 
 Define a function greet that prints "Hello, World!".
 # Define the function greet

@@ -1,6 +1,7 @@
 # AI Engineering — Guardrails + Output Validation Problem Bank
 
 **Who this is for:** AI Engineer track, after evals + observability (final applied module).
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-3 (prompt engineering covers structured outputs and refusal handling)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 15
 **Setup required:** `pip install pydantic`; `OPENAI_API_KEY` in `.env`
 

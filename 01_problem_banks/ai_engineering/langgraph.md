@@ -1,6 +1,7 @@
 # AI Engineering — LangGraph Problem Bank
 
 **Who this is for:** AI Engineer track, after LangChain.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-6 (AI Agents — the agent loop as a graph)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 10
 **Setup required:** `pip install langgraph langchain-openai`; `OPENAI_API_KEY` in `.env`
 

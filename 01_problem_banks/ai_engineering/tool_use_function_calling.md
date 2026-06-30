@@ -1,6 +1,7 @@
 # AI Engineering — Tool Use / Function Calling Problem Bank
 
 **Who this is for:** AI Engineer track, after Pydantic + structured outputs.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-6 (AI Agents — function calling is the atomic unit)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 3
 **Setup required:** `OPENAI_API_KEY` in `.env`
 

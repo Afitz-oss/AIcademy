@@ -1,6 +1,7 @@
 # AI Engineering — Build a Raw Agent (No Frameworks) Problem Bank
 
 **Who this is for:** AI Engineer track, after tool use and memory patterns.
+**Knowledgebase reference:** `00_knowledgebase/ai_engineering.ipynb` → AE-6 (AI Agents — the observe → think → act loop)
 **Roadmap:** `09_roadmaps/ai_engineer.md` → step 5
 **Setup required:** `OPENAI_API_KEY` in `.env`
 
