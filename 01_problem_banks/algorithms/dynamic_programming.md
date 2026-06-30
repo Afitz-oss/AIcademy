@@ -1,6 +1,7 @@
 # Algorithms — Dynamic Programming
 
 **Pattern:** Break a problem into overlapping subproblems, solve each once, and store the result (memoization or tabulation).
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-9
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** counting ways, optimizing (max/min) over choices, or any problem with overlapping subproblems and optimal substructure.

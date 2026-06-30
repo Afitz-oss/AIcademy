@@ -1,7 +1,7 @@
 # Algorithms — Two Pointers
 
 **Pattern:** Two pointers moving through a sequence (from both ends, or fast/slow).
-**Knowledgebase reference:** `00_knowledgebase/software_engineering.ipynb`
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-3
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** a sorted array, a pair/triplet search, in-place array manipulation, or removing/partitioning elements without extra space.

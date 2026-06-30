@@ -1,6 +1,7 @@
 # Algorithms — BFS / DFS (Trees & Graphs)
 
 **Pattern:** Systematic traversal — breadth-first (queue, level by level) or depth-first (stack/recursion, branch by branch).
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-6
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** trees, graphs, grids, connected components, shortest path in unweighted graphs, level-order processing.

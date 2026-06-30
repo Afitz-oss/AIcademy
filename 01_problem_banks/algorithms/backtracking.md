@@ -1,6 +1,7 @@
 # Algorithms — Backtracking
 
 **Pattern:** Build candidates incrementally, abandon ("backtrack") a path as soon as it can't lead to a valid solution.
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-8
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** generate all subsets/permutations/combinations, or constraint-satisfaction problems (N-Queens, Sudoku, word search).

@@ -4,20 +4,22 @@ LeetCode-style interview preparation organized around the 8 patterns that cover 
 
 **Hard rule:** every problem in this bank requires you to state the **time and space complexity (Big O)** of your solution as an acceptance criterion. Knowing the answer isn't enough — you must know its cost.
 
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` — concept primers (`A-1` Big O, `A-2`…`A-9` for each pattern below). Cite the matching section when teaching or grading.
+
 ---
 
 ## The 8 Patterns
 
-| # | Pattern | File | Why it's essential |
-|---|---|---|---|
-| 1 | Two Pointers | `two_pointers.md` | ~20% of array/string problems |
-| 2 | Sliding Window | `sliding_window.md` | Subarray/substring optimization |
-| 3 | Binary Search | `binary_search.md` | Anything sorted; O(log n) thinking |
-| 4 | BFS / DFS | `bfs_dfs.md` | All tree and graph traversal |
-| 5 | Dynamic Programming | `dynamic_programming.md` | Hardest + highest frequency |
-| 6 | Backtracking | `backtracking.md` | Subsets, permutations, combinations |
-| 7 | Hash Map / Set | `hash_map.md` | Trading space for O(1) lookups |
-| 8 | Heap / Priority Queue | `heap.md` | Top-K, scheduling, streaming median |
+| # | Pattern | File | Notebook | Why it's essential |
+|---|---|---|---|---|
+| 1 | Two Pointers | `two_pointers.md` | `A-3` | ~20% of array/string problems |
+| 2 | Sliding Window | `sliding_window.md` | `A-4` | Subarray/substring optimization |
+| 3 | Binary Search | `binary_search.md` | `A-5` | Anything sorted; O(log n) thinking |
+| 4 | BFS / DFS | `bfs_dfs.md` | `A-6` | All tree and graph traversal |
+| 5 | Dynamic Programming | `dynamic_programming.md` | `A-9` | Hardest + highest frequency |
+| 6 | Backtracking | `backtracking.md` | `A-8` | Subsets, permutations, combinations |
+| 7 | Hash Map / Set | `hash_map.md` | `A-2` | Trading space for O(1) lookups |
+| 8 | Heap / Priority Queue | `heap.md` | `A-7` | Top-K, scheduling, streaming median |
 
 ---
 

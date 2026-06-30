@@ -1,6 +1,7 @@
 # Algorithms — Binary Search
 
 **Pattern:** Repeatedly halving a search space to find a target or boundary in O(log n).
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-5
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** sorted data, or any problem where you can ask a yes/no question that's monotonic ("is this value feasible?").

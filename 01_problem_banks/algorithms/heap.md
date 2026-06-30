@@ -1,6 +1,7 @@
 # Algorithms — Heap / Priority Queue
 
 **Pattern:** A heap keeps the min (or max) element instantly accessible, with O(log n) insert/remove.
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-7
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** "top K", "K smallest/largest", merging sorted streams, running median, or any repeated "give me the current best" query. In Python, use `heapq` (a min-heap).

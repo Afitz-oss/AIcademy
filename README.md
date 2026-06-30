@@ -124,15 +124,27 @@ Click **Start Onboarding**. The extension will walk you through 13 short questio
 
 You can also trigger onboarding anytime with `Cmd+Shift+P` → `AIcademy: Start Onboarding`.
 
-### Step 9 — Set up your API key (optional for now)
+### Step 9 — API keys
 
-AIcademy uses Cursor's built-in AI for all tutoring — **you don't need an API key to get started.**
+Which keys you need depends on **how** you onboard and **where** you are in the curriculum:
 
-Come back to this at Stage 6 when you start building your own AI scripts:
-1. Get a key at [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-2. Copy `.env.example` → rename to `.env` → replace `your-key-here` with your key
+**A) Cursor extension onboarding (Step 8 above) — no key required**
+The extension uses Cursor's built-in AI to generate your learning path. Just complete Step 8 and you're done.
 
-> **Important:** Never share your `.env` file or paste your key into chat. It's already in `.gitignore` so it won't be uploaded to GitHub.
+**B) CLI onboarding (`./scripts/aicademy.sh`) — requires a Cursor API key**
+If you'd rather run the terminal questionnaire instead of the extension UI, the script triggers a Cursor SDK agent under the hood, which needs an API key. The script will exit with a clear message if it's missing.
+
+1. Get a key at [cursor.com/dashboard/integrations](https://cursor.com/dashboard/integrations)
+2. Copy `.env.example` → rename to `.env`
+3. Set `CURSOR_API_KEY=cursor_...` in `.env`
+
+**C) AI Engineering track (Stage 6+) — add provider keys as you reach them**
+When you start building your own AI scripts (raw API calls, RAG, agents), add the keys for the providers you use:
+- `OPENAI_API_KEY` → [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+- `ANTHROPIC_API_KEY` (optional) → [console.anthropic.com](https://console.anthropic.com)
+- `GROQ_API_KEY`, `LANGCHAIN_API_KEY` (optional) — see `.env.example` for links
+
+> **Important:** Never share your `.env` file or paste a key into chat. `.env` is already in `.gitignore` so it won't be uploaded to GitHub. If you ever accidentally commit a key, **rotate it at the provider immediately** — deleting the commit isn't enough once it's been pushed publicly.
 
 ### Step 10 — Start learning
 
@@ -169,7 +181,7 @@ AIcademy/
 │
 ├── LEARNER_PROFILE.md            ★ Auto-filled by the extension during onboarding
 ├── AGENTS.md                     AI tutor rules (do not edit)
-├── .env.example                  Copy → rename to .env → add your API key (Stage 6+)
+├── .env.example                  Copy → rename to .env → add CURSOR_API_KEY (CLI onboarding) or OPENAI_API_KEY (Stage 6+)
 ├── requirements.txt              Python dependencies (pip install -r requirements.txt)
 │
 ├── aicademy-extension/           ★ VS Code/Cursor extension — handles onboarding

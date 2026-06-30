@@ -1,6 +1,7 @@
 # Algorithms — Hash Map / Set
 
 **Pattern:** Trade space for time — use a dict/set for O(1) lookups instead of repeated scans.
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-2
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** "have I seen this before?", counting frequencies, grouping, or turning an O(n²) search into O(n).

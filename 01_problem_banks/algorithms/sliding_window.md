@@ -1,6 +1,7 @@
 # Algorithms — Sliding Window
 
 **Pattern:** A moving window over a sequence that expands/contracts to maintain a constraint.
+**Knowledgebase reference:** `00_knowledgebase/algorithms.ipynb` → A-4
 **Big O rule:** state time + space complexity for every solution.
 
 > **When to reach for it:** "longest/shortest/max/min subarray or substring such that..." — anything about contiguous runs.
