@@ -116,6 +116,8 @@ After restarting, you'll see a `🎓 AIcademy` button in the bottom status bar. 
 
 ### Step 8 — Complete Onboarding
 
+> **Heads up:** Onboarding makes one AI call to generate your curriculum, so it needs an API key first. **Do Step 9 below before clicking Start Onboarding.**
+
 When you reopen the AIcademy folder after installing the extension, a prompt will appear automatically:
 
 > **"Welcome to AIcademy! Your learner profile is empty. Ready to set up your personalized curriculum?"**
@@ -126,23 +128,32 @@ You can also trigger onboarding anytime with `Cmd+Shift+P` → `AIcademy: Start 
 
 ### Step 9 — API keys
 
-Which keys you need depends on **how** you onboard and **where** you are in the curriculum:
+**Onboarding needs an API key** — the AI tutor has to call a model to generate your curriculum, competency map, and intake notes. Which key depends on which onboarding path you use.
 
-**A) Cursor extension onboarding (Step 8 above) — no key required**
-The extension uses Cursor's built-in AI to generate your learning path. Just complete Step 8 and you're done.
+Before either path, copy the template:
 
-**B) CLI onboarding (`./scripts/aicademy.sh`) — requires a Cursor API key**
-If you'd rather run the terminal questionnaire instead of the extension UI, the script triggers a Cursor SDK agent under the hood, which needs an API key. The script will exit with a clear message if it's missing.
+```bash
+cp .env.example .env
+```
+
+**A) Cursor extension onboarding (Step 8) — needs `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`**
+The extension first looks for VS Code's built-in language-model API (`vscode.lm`), which is provided by **GitHub Copilot in VS Code**. In **Cursor**, that API isn't exposed today, so the extension falls back to calling OpenAI or Anthropic directly using a key from `.env`.
+
+1. Get a key at [platform.openai.com/api-keys](https://platform.openai.com/api-keys) (or [console.anthropic.com](https://console.anthropic.com))
+2. Set `OPENAI_API_KEY=sk-...` (or `ANTHROPIC_API_KEY=sk-ant-...`) in `.env`
+3. Reload Cursor, then run **AIcademy: Start Onboarding**
+
+**B) CLI onboarding (`./scripts/aicademy.sh`) — needs `CURSOR_API_KEY`**
+The CLI questionnaire triggers a Cursor SDK agent (`scripts/trigger_agent.py`). The script exits with a clear error if the key is missing.
 
 1. Get a key at [cursor.com/dashboard/integrations](https://cursor.com/dashboard/integrations)
-2. Copy `.env.example` → rename to `.env`
-3. Set `CURSOR_API_KEY=cursor_...` in `.env`
+2. Set `CURSOR_API_KEY=cursor_...` in `.env`
+3. Run `./scripts/aicademy.sh`
 
 **C) AI Engineering track (Stage 6+) — add provider keys as you reach them**
-When you start building your own AI scripts (raw API calls, RAG, agents), add the keys for the providers you use:
-- `OPENAI_API_KEY` → [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-- `ANTHROPIC_API_KEY` (optional) → [console.anthropic.com](https://console.anthropic.com)
-- `GROQ_API_KEY`, `LANGCHAIN_API_KEY` (optional) — see `.env.example` for links
+When you start building your own AI scripts (raw API calls, RAG, agents), add keys for the providers you use. See `.env.example` for the full list (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `LANGCHAIN_API_KEY`). If you already added one for onboarding, you're set.
+
+> **Cost note:** onboarding is a single call (a few cents at most). Day-to-day problem generation and grading inside Cursor chat use **Cursor's own subscription**, not your API key — so the `.env` key is only spent during onboarding/regeneration and any scripts you write yourself in Stage 6+.
 
 > **Important:** Never share your `.env` file or paste a key into chat. `.env` is already in `.gitignore` so it won't be uploaded to GitHub. If you ever accidentally commit a key, **rotate it at the provider immediately** — deleting the commit isn't enough once it's been pushed publicly.
 
