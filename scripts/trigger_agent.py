@@ -9,6 +9,7 @@ files and the first problem — no Cursor chat window needed.
 Usage:
   python3 scripts/trigger_agent.py --mode onboard --repo-root /path/to/AIcademy
   python3 scripts/trigger_agent.py --mode update  --repo-root /path/to/AIcademy
+  python3 scripts/trigger_agent.py --mode edit    --repo-root /path/to/AIcademy  # alias for update
 """
 
 import argparse
@@ -131,12 +132,17 @@ def stream_run(run) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="AIcademy Cursor SDK trigger")
-    parser.add_argument("--mode", choices=["onboard", "update", "auto"], default="auto")
+    parser.add_argument(
+        "--mode",
+        choices=["onboard", "update", "auto", "edit"],
+        default="auto",
+        help="onboard: first-time setup; update/edit: regenerate after profile change; auto: infer from session_state",
+    )
     parser.add_argument("--repo-root", type=Path, default=Path.cwd())
     args = parser.parse_args()
 
     repo_root = args.repo_root.resolve()
-    mode = args.mode
+    mode = "update" if args.mode == "edit" else args.mode
 
     # If session_state says "edit" it's an update
     if mode == "auto":

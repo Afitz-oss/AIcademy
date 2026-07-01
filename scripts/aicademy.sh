@@ -331,4 +331,7 @@ echo -e "${CYAN}${BOLD}Generating your personalized curriculum via Cursor SDK...
 echo -e "${DIM}(This may take 30–60 seconds)${RESET}"
 echo ""
 
-python3 "$TRIGGER" --mode "$MODE" --repo-root "$REPO_ROOT"
+TRIGGER_MODE="$MODE"
+[[ "$MODE" == "edit" ]] && TRIGGER_MODE="update"
+
+python3 "$TRIGGER" --mode "$TRIGGER_MODE" --repo-root "$REPO_ROOT"
